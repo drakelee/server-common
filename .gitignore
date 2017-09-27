@@ -8,3 +8,4 @@ node-service-common.tar.gz
 npm-debug.log
 tmp
 version.json
+.idea
