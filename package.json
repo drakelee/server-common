@@ -1,0 +1,27 @@
+{
+  "name": "server-common",
+  "version": "1.0.0",
+  "description": "Framework for node koa application",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drakelee/server-common.git"
+  },
+  "keywords": [
+    "server",
+    "common"
+  ],
+  "author": "Drake Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drakelee/server-common/issues"
+  },
+  "homepage": "https://github.com/drakelee/server-common#readme"
+}
