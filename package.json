@@ -4,8 +4,12 @@
   "description": "Framework for node koa application",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "graphql": "^0.11.7",
-    "koa": "^2.3.0"
+    "koa": "^2.3.0",
+    "koa-router": "^7.3.0",
+    "koajs-cors": "^1.0.9",
+    "pg": "^7.4.1"
   },
   "devDependencies": {},
   "scripts": {
