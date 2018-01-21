@@ -1,5 +1,6 @@
 .npmrc
 .nyc_output
+.env
 cache
 coverage
 deploy
@@ -9,3 +10,7 @@ npm-debug.log
 tmp
 version.json
 .idea
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
