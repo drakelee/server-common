@@ -8,7 +8,7 @@ const {graphql, buildSchema} = require('graphql')
 const {Client, Pool} = require('pg')
 const pool = new Pool()
 const app = new Koa()
-const router = new Router()
+const blogs = new Router()
 
 let schema = buildSchema(`
     type Query {
@@ -20,7 +20,16 @@ let root = {hello: () => 'hello world!'}
 
 // routes
 
-router
+blogs
+    .get('/blogs', async (ctx, next) => {
+        try {
+            const {rows} = await pool.query('SELECT * FROM blogs')
+            ctx.body = rows
+        } catch (e) {
+            console.error('Error on getting blogs', e)
+            throw e
+        }
+    })
     .get('/blogs/:id', async (ctx, next) => {
         // let response = await graphql(schema, '{hello}', root)
         // const client = await pool.connect()
@@ -31,7 +40,7 @@ router
             }
             ctx.body = rows[0]
         } catch (e) {
-            console.error('Error on query', e)
+            console.error('Error on getting blog', e)
             throw e
         } finally {
             // client.release()
@@ -87,8 +96,8 @@ app.use(async (ctx, next) => {
 })
 
 app
-    .use(router.routes())
-    .use(router.allowedMethods())
+    .use(blogs.routes())
+    .use(blogs.allowedMethods())
 
 
 console.log('Server running on port 8080')
